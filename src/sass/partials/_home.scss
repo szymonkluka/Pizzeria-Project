@@ -1,0 +1,165 @@
+.home-wrapper {
+  margin: ($base-size * 3.5) auto;
+  padding: ($base-size * 6) ($base-size * 4);
+  background: $color-light;
+  border-bottom: 1px solid lighten($color-dark, 70%);
+  border-radius: $radius;
+}
+
+.pic-links {
+  font-size: 12px;
+
+  .info {
+    margin-top: 5px;
+    flex-basis: 45%;
+    flex-grow: 2;
+    position: relative;
+    height: 150px;
+    background-color: $color-main;
+    font-size: $base-size * 2;
+    text-transform: uppercase;
+    color: $color-light;
+
+    .text {
+      @include center();
+      text-align: center;
+
+      p {
+        @extend .no-spacing;
+        font-family: $font-header;
+      }
+
+      p:nth-child(2) {
+        font-size: $base-size;
+      }
+    }
+  }
+}
+
+.links {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 150px;
+
+  .link {
+    flex-grow: 1;
+    position: relative;
+    flex-basis: 45%;
+    text-align: center;
+
+    &:hover a {
+      top: 40%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .link:first-child {
+    margin-right: 5px;
+  }
+
+  a {
+    @include center;
+    font-family: $font-header;
+    overflow: hidden;
+    font-size: $base-size * 2;
+    text-transform: uppercase;
+    color: $color-light;
+    text-decoration: none;
+    transition: 0.5s;
+  }
+}
+
+.carousel {
+  height: 180px;
+  margin: 90px 0;
+
+  .carousel-cell {
+    display: flex;
+    width: 100%;
+    height: 180px;
+    margin-right: 10px;
+
+    .img-container {
+      height: 100%;
+      flex-basis: 32.5%;
+      flex-shrink: 0;
+      margin-right: 40px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .quotation-title {
+      font-size: $base-size * 1.5;
+      font-weight: $font-bold;
+    }
+
+    .quotation-author {
+      font-style: italic;
+    }
+  }
+}
+
+.gallery {
+  height: 360px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-between;
+  justify-content: space-between;
+
+  .gallery-pic {
+    position: relative;
+    flex-basis: 32.5%;
+    height: 48%;
+
+    img {
+      border-radius: 2px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .icons {
+      @include center;
+      z-index: -1;
+
+      i {
+        margin: 10px;
+        font-size: $base-size * 1.8;
+        color: $color-light;
+        cursor: pointer;
+
+        &:hover {
+          color: $color-main;
+        }
+      }
+    }
+
+    &:hover .icons {
+      z-index: 2;
+    }
+
+    &:hover::before {
+      @include center;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background: $color-dark;
+      opacity: 0.7;
+      content: '';
+    }
+  }
+}
+
+.instaLink {
+  color: $color-main;
+}
